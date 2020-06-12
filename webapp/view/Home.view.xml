@@ -1,11 +1,27 @@
 <mvc:View
-	controllerName="sap.ui.demo.basicTemplate.controller.Home"
-	displayBlock="true"
-	xmlns="sap.m"
+controllerName="sap.ui.demo.basicTemplate.controller.Home"
+	xmlns:w="sap.ui.integration.widgets"
+	xmlns:f="sap.f"
+	xmlns:m="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
-	<Page
-		id="page"
-		title="{i18n>title}">
-		<content></content>
-	</Page>
+	<m:Title level="H2" titleStyle="H2" text="Garage Cards" class="sapUiLargeMarginBegin sapUiMediumMarginTop"/>
+	<f:GridContainer>
+		<f:layout>
+			<f:GridContainerSettings rowSize="84px" columnSize="200px" gap="32px" />
+		</f:layout>
+		<f:layoutXS>
+			<f:GridContainerSettings rowSize="70px" columnSize="70px" gap="8px" />
+		</f:layoutXS>
+
+		<w:Card id="entry" manifest="./components/Entry/manifest.json" class="sapUiLargeMargin">
+			<w:layoutData>
+				<f:GridContainerItemLayoutData columns="2" />
+			</w:layoutData>
+		</w:Card>
+		<w:Card id="statistics" manifest="./components/Statistics/manifest.json" class="sapUiLargeMargin">
+			<w:layoutData>
+				<f:GridContainerItemLayoutData columns="2" />
+			</w:layoutData>
+		</w:Card>
+	</f:GridContainer>
 </mvc:View>

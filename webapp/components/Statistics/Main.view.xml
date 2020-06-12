@@ -1,0 +1,9 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          controllerName="sap.ui.demo.basicTemplate.components.Statistics.Main"
+          width="100%"
+          displayBlock="true">
+    <List items="{path: 'entries>/'}">
+        <StandardListItem title="{entries>name}" description="{entries>description}" info="{entries>category}"/>
+    </List>
+</mvc:View>
