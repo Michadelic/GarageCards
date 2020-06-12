@@ -1,0 +1,55 @@
+<mvc:View controllerName="com.garageseries.Incident_CF.controller.Create" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:tnt="sap.tnt" xmlns:f="sap.ui.layout.form" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:core="sap.ui.core">
+	<Page showNavButton="true" navButtonPress="onNavButtonPress" title="{i18n>create}">
+		<headerContent>
+			<Button icon="sap-icon://save" tooltip="Save" text="Save" type="Transparent" press="onSave"/>
+		</headerContent>
+		<content>
+			<f:Form editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout backgroundDesign="Solid" labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false"
+						emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="true"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Title">
+								<f:fields>
+									<Input id="title" value="{/title}" required="true" liveChange="onInput"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Description">
+								<f:fields>
+									<Input id="description" value="{/description}" required="true" liveChange="onInput"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Category">
+								<f:fields>
+									<ComboBox id="category" items="{categories>/Category}" selectedKey="security" change="onSelectionChange">
+										<core:Item key="{categories>code}" text="{categories>name}"/>
+									</ComboBox>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Priority">
+								<f:fields>
+									<!-- <Input id="priority" value="{/priority_code_code}" /> -->
+									<!--	<ComboBox id="priority" items="{values>/priority}" change="onSelectionChange" selectedKey="low">  -->
+									<ComboBox id="priority" items="{categories>/Priority}" change="onSelectionChange" selectedKey="low">
+										<core:Item key="{categories>code}" text="{categories>name}"/>
+									</ComboBox>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Attachment">
+								<f:fields>
+									<Button icon="sap-icon://camera" press="onTakePicture"></Button>
+									<html:input id="file" type="file" accept="image/*" class="hidden" capture="camera"/>
+									<html:img id="picPreview" class="previewPic"></html:img>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</content>
+	</Page>
+</mvc:View>

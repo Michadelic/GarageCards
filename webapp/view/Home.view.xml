@@ -23,5 +23,10 @@ controllerName="sap.ui.demo.basicTemplate.controller.Home"
 				<f:GridContainerItemLayoutData columns="2" />
 			</w:layoutData>
 		</w:Card>
+		<w:Card id="incidents" manifest="./components/IncidentCreation/manifest.json" class="sapUiLargeMargin" height="541px">
+			<w:layoutData>
+				<f:GridContainerItemLayoutData columns="2" />
+			</w:layoutData>
+		</w:Card>
 	</f:GridContainer>
 </mvc:View>

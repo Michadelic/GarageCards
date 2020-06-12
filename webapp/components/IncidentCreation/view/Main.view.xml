@@ -1,0 +1,3 @@
+<mvc:View controllerName="com.garageseries.Incident_CF.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App id="app"></App>
+</mvc:View>
