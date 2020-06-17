@@ -31,7 +31,10 @@ sap.ui.define([
 
 			var oWS = new WebSocket("ws://em-consumer-active-jaguar.cfapps.us10.hana.ondemand.com/");
 			oWS.attachMessage(function (oEvent) {
+				// update list
 				this.getView().getModel().refresh();
+				// update analytics card
+				$(".sapFCardAnalytical").control(0).refresh();
 			}.bind(this));
 
 		   var oModel = new JSONModel([]);

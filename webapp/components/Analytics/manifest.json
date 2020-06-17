@@ -1,7 +1,7 @@
 {
   "_version": "1.14.0",
   "sap.app": {
-    "id": "sap.ui.demo.basicTemplate.components.Analytics",
+    "id": "card.explorer.line.card",
     "type": "card",
     "title": "Sample of a Line Chart",
     "subTitle": "Sample of a Line Chart",

@@ -5,8 +5,8 @@
     controllerName="sap.ui.demo.basicTemplate.components.Statistics.Main"
     width="100%"
     displayBlock="true">
-    <Text text="{= ${/SafetyIncidents}.length} }"/>
-    <mc:LineMicroChart
+    <Text text="Amount of Incidents: {= ${/SafetyIncidents}.length }"/>
+    <!--<mc:LineMicroChart
         showPoints="true"
         leftTopLabel="Left"
         leftBottomLabel="Left"
@@ -52,5 +52,5 @@
                     formatter: '.toPointX'
                 }" color="Error"/>
         </mc:columns>
-    </mc:ColumnMicroChart>
+    </mc:ColumnMicroChart>-->
 </mvc:View>

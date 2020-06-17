@@ -69,8 +69,8 @@
 			}
 		},
 		"header": {
-			"title": "Incidents",
-			"subTitle": "Data is added by WebSocket connection"
+			"title": "Recent Incidents",
+			"subTitle": "List of incidents sorted by creation date"
 		}
 	}
 }

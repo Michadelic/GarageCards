@@ -1,6 +1,6 @@
 <mvc:View controllerName="com.garageseries.Incident_CF.controller.Create" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
 	xmlns:tnt="sap.tnt" xmlns:f="sap.ui.layout.form" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:core="sap.ui.core">
-	<Page showNavButton="true" navButtonPress="onNavButtonPress" title="{i18n>create}">
+	<Page title="{i18n>create}">
 		<headerContent>
 			<Button icon="sap-icon://save" tooltip="Save" text="Save" type="Transparent" press="onSave"/>
 		</headerContent>

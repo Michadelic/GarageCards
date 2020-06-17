@@ -1,0 +1,103 @@
+{
+  "_version": "1.14.0",
+  "sap.app": {
+    "id": "sap.ui.demo.basicTemplate.components.Queue",
+    "type": "card",
+    "title": "Service Incidents",
+    "subTitle": "Amount of incidents by category",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "dataSources": {
+      "incidents": {
+        "uri": "http://localhost:8081/https://davidk-srv.cfapps.us10.hana.ondemand.com/incident",
+        "type": "OData"
+      }
+    },
+    "shortTitle": "A short title for this Card",
+    "info": "Additional information about this Card",
+    "description": "A long description for this Card",
+    "tags": {
+      "keywords": [
+        "Analytical",
+        "Card",
+        "Stacked Column",
+        "Sample"
+      ]
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://full-stacked-column-chart"
+    }
+  },
+  "sap.card": {
+    "type": "Analytical",
+    "header": {
+      "type": "Numeric",
+      "data": {
+        "request": {
+          "url": "{{dataSources.incidents.uri}}/SafetyIncidents?$orderby=createdAt%20desc"
+        },
+        "path": "/value"
+
+      },
+      "title": "Service Incidents by Category",
+      "mainIndicator": {
+        "number": "{= ${}.length }",
+        "trend": "Up",
+        "state": "Critical"
+      },
+      "details": "Last incident opened at {0/createdAt} in category {0/category_code}"
+
+
+
+    },
+    "content": {
+      "chartType": "StackedColumn",
+      "data": {
+        "request": {
+          "url": "{{dataSources.incidents.uri}}/IncidentsByCategory"
+        },
+        "path": "/value"
+      },
+      "legend": {
+        "visible": true,
+        "position": "Bottom",
+        "alignment": "TopLeft"
+      },
+      "plotArea": {
+        "dataLabel": {
+          "visible": false,
+          "showTotal": true
+        },
+        "categoryAxisText": {
+          "visible": false
+        },
+        "valueAxisText": {
+          "visible": false
+        }
+      },
+      "title": {
+        "text": "Queue Monitor",
+        "visible": true,
+        "alignment": "Center"
+      },
+      "measureAxis": "valueAxis",
+      "dimensionAxis": "categoryAxis",
+      "dimensions": [
+        {
+          "label": "Categories",
+          "value": "{category_code}"
+        }
+      ],
+      "measures": [
+        {
+          "label": "Incidents",
+          "value": "{categories}"
+        }
+      ]
+    }
+  }
+}
