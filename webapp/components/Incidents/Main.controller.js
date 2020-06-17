@@ -9,23 +9,33 @@ sap.ui.define([
 ], function(Controller, WebSocket, JSONModel, formatter, Filter, FilterOperator, MessageBox) {
 	"use strict";
 
-	return Controller.extend("sap.ui.demo.basicTemplate.components.Statistics.Main", {
+	return Controller.extend("sap.ui.demo.basicTemplate.components.Incidents.Main", {
 
 		formatter: formatter,
 
-		toPointX: function () {
-			debugger;
-		},
-
 		onInit: function () {
+			/*var fnWaitForWS = function () {
+				var oWS = window._oWS;
+
+				if (!oWS) {
+					window.setTimeout(fnWaitForWS, 100);
+				} else {
+					oWS.attachMessage(function (oEvent) {
+						var sMessage = oEvent.getParameter("data");
+						//this._reload(sMessage);
+						this.getView().getModel().refresh();
+					}.bind(this));
+				}
+		   }.bind(this);
+		   fnWaitForWS();*/
+
 			var oWS = new WebSocket("ws://em-consumer-active-jaguar.cfapps.us10.hana.ondemand.com/");
 			oWS.attachMessage(function (oEvent) {
-				var sMessage = oEvent.getParameter("data");
 				this.getView().getModel().refresh();
 			}.bind(this));
 
-			var oModel = new JSONModel([]);
-			this.getView().setModel(oModel, "entries");
+		   var oModel = new JSONModel([]);
+		   this.getView().setModel(oModel, "entries");
 		},
 
 		_reload: function (sMessage) {

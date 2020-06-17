@@ -1,9 +1,9 @@
 {
 	"_version": "1.15.0",
 	"sap.app": {
-		"id": "sap.ui.demo.basicTemplate.components.Entry",
+		"id": "sap.ui.demo.basicTemplate.components.Incidents",
 		"type": "card",
-		"title": "Entry card",
+		"title": "Incidents card",
 		"subTitle": "Sample of a Component Content",
 		"applicationVersion": {
 			"version": "1.0.0"
@@ -17,25 +17,45 @@
 				"Card",
 				"Sample"
 			]
+		},
+		"dataSources": {
+			"incidentServiceSource": {
+				"XXuri": "/destinations/Incidents_CF/incident/",
+				"uri": "http://localhost:8081/https://davidk-srv.cfapps.us10.hana.ondemand.com/incident/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "4.0"
+				}
+			}
 		}
 	},
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
-			"icon": "sap-icon://collision"
+			"icon": "sap-icon://area-chart"
 		}
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.ui.demo.basicTemplate.components.Entry.Main",
+			"viewName": "sap.ui.demo.basicTemplate.components.Incidents.Main",
 			"type": "XML",
 			"async": true,
-			"id": "entry"
+			"id": "statistics"
 		},
 		"dependencies": {
 			"minUI5Version": "1.38",
 			"libs": {
 				"sap.m": {}
+			}
+		},
+		"models": {
+			"": {
+				"dataSource": "incidentServiceSource",
+				"settings": {
+					"synchronizationMode": "None",
+					"operationMode": "Server",
+					"autoExpandSelect": true
+				}
 			}
 		}
 	},
@@ -49,8 +69,8 @@
 			}
 		},
 		"header": {
-			"title": "Entry",
-			"subTitle": "Updates statistics on save"
+			"title": "Incidents",
+			"subTitle": "Data is added by WebSocket connection"
 		}
 	}
 }

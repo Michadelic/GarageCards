@@ -7,6 +7,9 @@ sap.ui.define([
 ], function (Controller, JSONModel, formatter, Filter, FilterOperator) {
 	"use strict";
 
+	//const DESTINATION = "/destinations/Incidents_CF/incident/";
+	const DESTINATION = "http://localhost:8081/https://davidk-srv.cfapps.us10.hana.ondemand.com/incident/";
+
 	return Controller.extend("com.garageseries.Incident_CF.controller.Home", {
 
 		formatter: formatter,
@@ -15,7 +18,7 @@ sap.ui.define([
 			var settings = {
 				async: true,
 				crossDomain: true,
-				url: "/destinations/Incidents_CF/incident/SafetyIncidents?$expand=incidentPhotos,category,priority&$orderby=createdAt%20desc&$top=10",
+				url: DESTINATION + "/SafetyIncidents?$expand=incidentPhotos,category,priority&$orderby=createdAt%20desc&$top=10",
 				method: "GET",
 				headers: {
 					"content-type": "application/json",

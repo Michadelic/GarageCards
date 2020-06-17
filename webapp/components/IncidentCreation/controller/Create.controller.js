@@ -4,6 +4,10 @@ sap.ui.define([
 	"sap/m/MessageToast"
 ], function (Controller, JSONModel, MessageToast) {
 	"use strict";
+
+	//const DESTINATION = "/destinations/Incidents_CF/incident/";
+	const DESTINATION = "http://localhost:8081/https://davidk-srv.cfapps.us10.hana.ondemand.com/incident/";
+
 	var that = null;
 	var pictureObj = null;
 	const initialValues = {
@@ -109,10 +113,12 @@ sap.ui.define([
 				// TODO: set model to initial values
 				var settings = {
 					async: true,
-					url: "/destinations/Incidents_CF/incident/SafetyIncidents",
+					url: DESTINATION + "/SafetyIncidents",
 					method: "POST",
 					headers: {
-						"content-type": "application/json"
+						"content-type": "application/json",
+						"APIKey": "OEg7evHR3qkgBZDjgAyo3HZl7guhkaGN1",
+						"X-Requested-With": "XMLHttpRequest"
 					},
 					processData: false,
 					data: JSON.stringify(data)
@@ -135,13 +141,13 @@ sap.ui.define([
 							this.createPicture(response);
 
 							//update the home page request with the new value
-							this.updateReportsModel();
+							/*this.updateReportsModel();
 							//clear picture
 
 							//nativate back to home page
 							this.getOwnerComponent()
 								.getRouter()
-								.navTo("RouteMain", {});
+								.navTo("RouteMain", {});*/
 						}.bind(this)
 					)
 					.fail(function () {
@@ -158,11 +164,13 @@ sap.ui.define([
 			var settings = {
 				async: true,
 				crossDomain: true,
-				url: "/destinations/Incidents_CF/incident/IncidentPhotos",
+				url: DESTINATION + "/IncidentPhotos",
 				"method": "POST",
 				"timeout": 0,
 				"headers": {
-					"content-type": "application/json"
+					"content-type": "application/json",
+					"APIKey": "OEg7evHR3qkgBZDjgAyo3HZl7guhkaGN1",
+					"X-Requested-With": "XMLHttpRequest"
 				},
 				"data": JSON.stringify(data),
 			};
@@ -190,8 +198,10 @@ sap.ui.define([
 
 			});
 
-			xhr.open("PUT", "/destinations/Incidents_CF/incident/IncidentPhotos(" + id + ")/image");
+			xhr.open("PUT", DESTINATION + "/IncidentPhotos(" + id + ")/image");
 			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+			xhr.setRequestHeader("APIKey", "OEg7evHR3qkgBZDjgAyo3HZl7guhkaGN1");
 
 			xhr.send(data);
 
@@ -224,10 +234,12 @@ sap.ui.define([
 				var settings = {
 					async: true,
 					crossDomain: true,
-					url: "/destinations/Incidents_CF/incident/SafetyIncidents?$expand=incidentPhotos",
+					url: DESTINATION + "/SafetyIncidents?$expand=incidentPhotos",
 					method: "GET",
 					headers: {
-						"content-type": "application/json"
+						"content-type": "application/json",
+						"APIKey": "OEg7evHR3qkgBZDjgAyo3HZl7guhkaGN1",
+						"X-Requested-With": "XMLHttpRequest"
 					},
 					processData: false
 				};

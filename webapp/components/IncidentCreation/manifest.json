@@ -11,21 +11,24 @@
 		"subTitle": "{{appDescription}}",
 		"dataSources": {
 			"incidentServiceSource": {
-				"uri": "/destinations/Incidents_CF/incident/",
+				"XXuri": "/destinations/Incidents_CF/incident/",
+				"uri": "http://localhost:8081/https://davidk-srv.cfapps.us10.hana.ondemand.com/incident/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "4.0"
 				}
 			},
 			"categorySource": {
-				"uri": "/destinations/Incidents_CF/incident/",
+				"XXuri": "/destinations/Incidents_CF/incident/",
+				"uri": "http://localhost:8081/https://davidk-srv.cfapps.us10.hana.ondemand.com/incident/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "4.0"
 				}
 			},
 			"prioritySource": {
-				"uri": "/destinations/Incidents_CF/incident/Priority/",
+				"XXuri": "/destinations/Incidents_CF/incident/Priority/",
+				"uri": "http://localhost:8081/https://davidk-srv.cfapps.us10.hana.ondemand.com/incident/Priority/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "4.0"

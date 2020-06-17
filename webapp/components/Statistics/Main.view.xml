@@ -1,9 +1,56 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc"
-          xmlns="sap.m"
-          controllerName="sap.ui.demo.basicTemplate.components.Statistics.Main"
-          width="100%"
-          displayBlock="true">
-    <List items="{path: 'entries>/'}">
-        <StandardListItem title="{entries>name}" description="{entries>description}" info="{entries>category}"/>
-    </List>
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:mc="sap.suite.ui.microchart"
+    controllerName="sap.ui.demo.basicTemplate.components.Statistics.Main"
+    width="100%"
+    displayBlock="true">
+    <Text text="{= ${/SafetyIncidents}.length} }"/>
+    <mc:LineMicroChart
+        showPoints="true"
+        leftTopLabel="Left"
+        leftBottomLabel="Left"
+        rightTopLabel="May"
+        rightBottomLabel="June"
+        color="Neutral"
+        press=".press"
+        width="100%"
+        height="10rem"
+        showThresholdValue="true"
+        thresholdDisplayValue="zero"
+        class="sapUiTinyMarginTop">
+        <mc:lines>
+            <mc:LineMicroChartLine
+                points="{
+                    path: '/SafetyIncidents',
+                    templateShareable: true
+                }">
+                <mc:LineMicroChartPoint
+                    show="true"
+                    x="{
+                        path: 'createdAt',
+                        type: 'sap.ui.model.odata.type.DateTime',
+                        formatOptions: {
+                            pattern: 'dd'
+                        }
+                    }"
+                    y="{
+                        path: 'ID',
+                        formatter: '.formatter.toPointY'
+                    }"/>
+            </mc:LineMicroChartLine>
+        </mc:lines>
+    </mc:LineMicroChart>
+    <mc:ColumnMicroChart size="S" press="press" class="sapUiSmallMargin" columns="{
+        path: '/SafetyIncidents',
+        templateShareable: true
+    }">
+        <mc:columns>
+            <mc:ColumnMicroChartData
+                value="{
+                    path: 'createdAt',
+                    formatter: '.toPointX'
+                }" color="Error"/>
+        </mc:columns>
+    </mc:ColumnMicroChart>
 </mvc:View>
