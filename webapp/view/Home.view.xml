@@ -1,62 +1,64 @@
 <mvc:View
-controllerName="sap.ui.demo.basicTemplate.controller.Home"
+	controllerName="sap.ui.demo.basicTemplate.controller.Home"
 	xmlns:w="sap.ui.integration.widgets"
 	xmlns:f="sap.f"
 	xmlns:m="sap.m"
 	xmlns:c="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc">
-	<m:App>
-		<m:Page>
-			<m:customHeader>
-				<m:Toolbar>
-					<c:Icon
-							size="2rem"
-							src="sap-icon://sap-ui5"
-							color="#FF5516"
-							class="sapUiLargeMarginBegin">
-					</c:Icon>
-					<m:Title level="H2" titleStyle="H2" text="Garage Cards" class="sapUiTinyMarginBegin"/>
-				</m:Toolbar>
-			</m:customHeader>
-			<f:GridContainer>
-				<f:layout>
-					<f:GridContainerSettings rowSize="84px" columnSize="200px" gap="32px" />
-				</f:layout>
-				<f:layoutXS>
-					<f:GridContainerSettings rowSize="70px" columnSize="70px" gap="8px" />
-				</f:layoutXS>
+	<m:Page backgroundDesign="Transparent">
+		<m:customHeader>
+			<m:Toolbar>
+				<c:Icon
+						size="2rem"
+						src="sap-icon://sap-ui5"
+						color="#FF5516"
+						class="sapUiLargeMarginBegin">
+				</c:Icon>
+				<m:Title level="H2" titleStyle="H2" text="Garage Cards" class="sapUiTinyMarginBegin"/>
+			</m:Toolbar>
+		</m:customHeader>
 
-				<!--<w:Card id="statistics" manifest="./components/Statistics/manifest.json" class="sapUiLargeMargin">
-					<w:layoutData>
-						<f:GridContainerItemLayoutData columns="2" />
-					</w:layoutData>
-				</w:Card>-->
+		<m:Title level="H2" titleStyle="H2" text="Service Incidents" class="sapUiLargeMarginBegin sapUiMediumMarginTop"/>
 
-				<!--<w:Card id="analytics" manifest="./components/Analytics/manifest.json" class="sapUiLargeMargin">
-					<w:layoutData>
-						<f:GridContainerItemLayoutData columns="2" />
-					</w:layoutData>
-				</w:Card>-->
+		<f:GridContainer class="gridContainer">
+			<f:layout>
+				<f:GridContainerSettings rowSize="84px" columnSize="200px" gap="32px" />
+			</f:layout>
+			<f:layoutXS>
+				<f:GridContainerSettings rowSize="70px" columnSize="70px" gap="8px" />
+			</f:layoutXS>
 
-				<w:Card id="queue" manifest="./components/Queue/manifest.json" class="sapUiLargeMargin">
-					<w:layoutData>
-						<f:GridContainerItemLayoutData columns="2" />
-					</w:layoutData>
-				</w:Card>
 
-				<w:Card id="create" manifest="./components/IncidentCreation/manifest.json" class="sapUiLargeMargin" height="541px">
-					<w:layoutData>
-						<f:GridContainerItemLayoutData columns="2" />
-					</w:layoutData>
-				</w:Card>
+			<!--<w:Card id="statistics" manifest="./components/Statistics/manifest.json" class="sapUiLargeMargin">
+				<w:layoutData>
+					<f:GridContainerItemLayoutData columns="2" />
+				</w:layoutData>
+			</w:Card>-->
 
-				<w:Card id="incidents" manifest="./components/Incidents/manifest.json" class="sapUiLargeMargin" height="541px">
-					<w:layoutData>
-						<f:GridContainerItemLayoutData columns="2" />
-					</w:layoutData>
-				</w:Card>
+			<!--<w:Card id="analytics" manifest="./components/Analytics/manifest.json" class="sapUiLargeMargin">
+				<w:layoutData>
+					<f:GridContainerItemLayoutData columns="2" />
+				</w:layoutData>
+			</w:Card>-->
 
-			</f:GridContainer>
-		</m:Page>
-	</m:App>
+			<w:Card id="queue" manifest="./components/Queue/manifest.json" class="sapUiLargeMargin">
+				<w:layoutData>
+					<f:GridContainerItemLayoutData columns="2" />
+				</w:layoutData>
+			</w:Card>
+
+			<w:Card id="create" manifest="./components/IncidentCreation/manifest.json" class="sapUiLargeMargin" height="541px">
+				<w:layoutData>
+					<f:GridContainerItemLayoutData columns="2" />
+				</w:layoutData>
+			</w:Card>
+
+			<w:Card id="incidents" manifest="./components/Incidents/manifest.json" class="sapUiLargeMargin" height="541px">
+				<w:layoutData>
+					<f:GridContainerItemLayoutData columns="2" />
+				</w:layoutData>
+			</w:Card>
+
+		</f:GridContainer>
+	</m:Page>
 </mvc:View>

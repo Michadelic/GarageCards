@@ -149,8 +149,8 @@
 			}
 		},
 		"header": {
-			"title": "Creation",
-			"subTitle": "The incident creation app"
+			"title": "Incident Creation",
+			"subTitle": "Add a new incident"
 		}
 	}
 }

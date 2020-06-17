@@ -2,5 +2,7 @@
 	displayBlock="true"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
-	<App id="app"/>
+	<App
+		id="app"
+		backgroundImage="css/bg.png"/>
 </mvc:View>
