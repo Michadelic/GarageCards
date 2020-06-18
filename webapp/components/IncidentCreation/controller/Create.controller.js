@@ -176,8 +176,9 @@ sap.ui.define([
 			};
 
 			$.ajax(settings).done(function (response) {
-				this.uploadPicture(response)
-
+				if (pictureObj) {
+					this.uploadPicture(response);
+				}
 			}.bind(this));
 		},
 		uploadPicture: function (response) {
@@ -185,7 +186,8 @@ sap.ui.define([
 			var data = this.dataURItoBlob(pictureObj);
 
 			var xhr = new XMLHttpRequest();
-			xhr.withCredentials = true;
+			// xhr.withCredentials = true; does not work with CORSAnywhere
+			xhr.withCredentials = false;
 
 			xhr.addEventListener("readystatechange", function () {
 				if (this.readyState === 4) {
@@ -228,29 +230,7 @@ sap.ui.define([
 			return new Blob([ia], {
 				type: mimeString
 			});
-		},
-		updateReportsModel: function () {
-				var oModel = new JSONModel();
-				var settings = {
-					async: true,
-					crossDomain: true,
-					url: DESTINATION + "/SafetyIncidents?$expand=incidentPhotos",
-					method: "GET",
-					headers: {
-						"content-type": "application/json",
-						"APIKey": "OEg7evHR3qkgBZDjgAyo3HZl7guhkaGN1",
-						"X-Requested-With": "XMLHttpRequest"
-					},
-					processData: false
-				};
-
-				$.ajax(settings).done(function (response) {
-
-					oModel.setData(response.value);
-					sap.ui.getCore().getModel("reports").setData(response.value);
-				});
-
-			}
+		}
 	});
 
 });

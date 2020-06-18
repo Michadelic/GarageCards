@@ -25,15 +25,15 @@
 							</f:FormElement>
 							<f:FormElement label="Category">
 								<f:fields>
-									<ComboBox id="category" items="{/Category}" selectedKey="security" change="onSelectionChange">
-										<core:Item key="{code}" text="{name}"/>
+									<ComboBox id="category" items="{categories>/Category}" selectedKey="security" change="onSelectionChange">
+										<core:Item key="{categories>code}" text="{categories>name}"/>
 									</ComboBox>
 								</f:fields>
 							</f:FormElement>
 							<f:FormElement label="Priority">
 								<f:fields>
-									<ComboBox id="priority" items="{/Priority}" change="onSelectionChange" selectedKey="low">
-										<core:Item key="{code}" text="{name}"/>
+									<ComboBox id="priority" items="{categories>/Priority}" change="onSelectionChange" selectedKey="low">
+										<core:Item key="{categories>code}" text="{categories>name}"/>
 									</ComboBox>
 								</f:fields>
 							</f:FormElement>

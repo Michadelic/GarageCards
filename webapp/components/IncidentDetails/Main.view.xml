@@ -1,0 +1,65 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m"
+    controllerName="sap.ui.demo.basicTemplate.components.IncidentDetails.Main"
+    width="100%"
+    displayBlock="true">
+    <f:Form id="form" editable="false" visible="false">
+        <f:layout>
+            <f:ResponsiveGridLayout backgroundDesign="Solid" labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false"
+                                    emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="true"/>
+        </f:layout>
+        <f:formContainers>
+            <f:FormContainer>
+                <f:formElements>
+                    <f:FormElement>
+                        <f:label>
+                            <Label text="Title" design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Text id="titleText" text="{title}"/>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement >
+                        <f:label>
+                            <Label text="Description" design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Text id="descriptionText" text="{description}"/>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:label>
+                            <Label text="Category" design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Text id="categoryText" text="{category_code}"/>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:label>
+                            <Label text="Priority" design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Text id="priorityText" text="{priority_code}"/>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:label>
+                            <Label text="Status" design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Text id="incidentStatusText" text="{incidentStatus_code}"/>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:fields>
+                            <Image src="{path:'incidentPhotos/0/ID',formatter: '.formatter.src'}" width="250px"></Image>
+                        </f:fields>
+                    </f:FormElement>
+                </f:formElements>
+            </f:FormContainer>
+        </f:formContainers>
+    </f:Form>
+</mvc:View>

@@ -3,3 +3,7 @@
 .gridContainer {
     height: auto !important;
 }
+
+.incidentList .sapMTB-Transparent-CTX.sapMTB {
+    padding: 0 0.125rem 0 0;
+}

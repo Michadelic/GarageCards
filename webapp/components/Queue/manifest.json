@@ -49,10 +49,10 @@
         "trend": "Up",
         "state": "Critical"
       },
-      "details": "Last incident opened at {0/createdAt} in category {0/category_code}"
-
-
-
+      "details": "Last incident opened at {0/createdAt} in category {0/category_code}",
+      "icon": {
+        "src": "sap-icon://vertical-bar-chart"
+      }
     },
     "content": {
       "chartType": "StackedColumn",

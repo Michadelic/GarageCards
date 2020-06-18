@@ -59,6 +59,12 @@
 				</w:layoutData>
 			</w:Card>
 
+			<w:Card id="incidentDetails" manifest="./components/IncidentDetails/manifest.json" class="sapUiLargeMargin" height="541px">
+				<w:layoutData>
+					<f:GridContainerItemLayoutData columns="2" />
+				</w:layoutData>
+			</w:Card>
+
 		</f:GridContainer>
 	</m:Page>
 </mvc:View>

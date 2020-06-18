@@ -24,7 +24,7 @@ sap.ui.define([
 		},
 
 		onCardReady: function (oCard) {
-			// dfklsdfjkl
+			// custom card initialization
 		}
 
 	});

@@ -1,9 +1,9 @@
 {
 	"_version": "1.15.0",
 	"sap.app": {
-		"id": "sap.ui.demo.basicTemplate.components.Incidents",
+		"id": "sap.ui.demo.basicTemplate.components.IncidentDetails",
 		"type": "card",
-		"title": "Incidents card",
+		"title": "Incident Details card",
 		"subTitle": "Sample of a Component Content",
 		"applicationVersion": {
 			"version": "1.0.0"
@@ -37,7 +37,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.ui.demo.basicTemplate.components.Incidents.Main",
+			"viewName": "sap.ui.demo.basicTemplate.components.IncidentDetails.Main",
 			"type": "XML",
 			"async": true,
 			"id": "statistics"
@@ -62,10 +62,10 @@
 	"sap.card": {
 		"type": "Component",
 		"header": {
-			"title": "Recent Incidents",
-			"subTitle": "List of incidents sorted by creation date",
+			"title": "Incident Details",
+			"subTitle": "Choose an item to display its details",
 			"icon": {
-				"src": "sap-icon://activity-items"
+				"src": "sap-icon://display"
 			}
 		}
 	}

@@ -4,34 +4,39 @@
     controllerName="sap.ui.demo.basicTemplate.components.Incidents.Main"
     width="100%"
     displayBlock="true">
-    <List id="listID"
-        items="{
-        path: '/SafetyIncidents',
-        sorter : {
-            path : 'createdAt',
-            descending : true
-         }
-     }" growing="true" growingThreshold="10">
-        <headerToolbar>
-            <Toolbar>
-                <SearchField liveChange=".onFilter"/>
-            </Toolbar>
-        </headerToolbar>
-        <items>
-            <ObjectListItem
-                title="{title}"
-                icon="{
-                    path:'incidentPhotos/0/ID',
-                    formatter: '.formatter.src'
-                }"
-                iconDensityAware="false"
-                type="Active" press=".toIncident">
-                <firstStatus>
-                    <ObjectStatus text="{priority/name}" state="{path:'priority_code',formatter:'.formatter.state'}"/>
-                </firstStatus>
-                <ObjectAttribute text="{description}"/>
-                <ObjectAttribute text="{category/name}" class="category"/>
-            </ObjectListItem>
-        </items>
-    </List>
+    <ScrollContainer height="460px" vertical="true">
+        <List id="listID"
+            items="{
+                path: '/SafetyIncidents',
+                sorter : {
+                    path : 'createdAt',
+                    descending : true
+                }
+            }"
+            growing="true"
+            growingThreshold="10"
+            class="incidentList">
+            <headerToolbar>
+                <Toolbar>
+                    <SearchField liveChange=".onFilter"/>
+                </Toolbar>
+            </headerToolbar>
+            <items>
+                <ObjectListItem
+                    title="{title}"
+                    icon="{
+                        path:'incidentPhotos/0/ID',
+                        formatter: '.formatter.src'
+                    }"
+                    iconDensityAware="false"
+                    type="Active" press=".toIncident">
+                    <firstStatus>
+                        <ObjectStatus text="{priority/name}" state="{path:'priority_code',formatter:'.formatter.state'}"/>
+                    </firstStatus>
+                    <ObjectAttribute text="{description}"/>
+                    <ObjectAttribute text="{category/name}" class="category"/>
+                </ObjectListItem>
+            </items>
+        </List>
+    </ScrollContainer>
 </mvc:View>

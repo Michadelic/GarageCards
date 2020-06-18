@@ -14,21 +14,6 @@ sap.ui.define([
 		formatter: formatter,
 
 		onInit: function () {
-			/*var fnWaitForWS = function () {
-				var oWS = window._oWS;
-
-				if (!oWS) {
-					window.setTimeout(fnWaitForWS, 100);
-				} else {
-					oWS.attachMessage(function (oEvent) {
-						var sMessage = oEvent.getParameter("data");
-						//this._reload(sMessage);
-						this.getView().getModel().refresh();
-					}.bind(this));
-				}
-		   }.bind(this);
-		   fnWaitForWS();*/
-
 			var oWS = new WebSocket("ws://em-consumer-active-jaguar.cfapps.us10.hana.ondemand.com/");
 			oWS.attachMessage(function (oEvent) {
 				// update list
@@ -36,23 +21,6 @@ sap.ui.define([
 				// update analytics card
 				$(".sapFCardAnalytical").control(0).refresh();
 			}.bind(this));
-
-		   var oModel = new JSONModel([]);
-		   this.getView().setModel(oModel, "entries");
-		},
-
-		_reload: function (sMessage) {
-			var aResult = JSON.parse(sMessage);
-			//alert(aResult.name + " " + aResult.description + " " + aResult.category);
-			var oModel = this.getView().getModel("entries");
-			var aEntries = oModel.getData();
-			aEntries.push({
-				name: aResult.name,
-				description: aResult.description,
-				category: aResult.category
-			});
-			oModel.setData(aEntries);
-
 		},
 
 		onFilter: function (oEvent) {
@@ -70,7 +38,9 @@ sap.ui.define([
 		},
 
 		toIncident: function (oEvent) {
-			MessageBox.show("Nav to incident here...");
+			var oData = {id: oEvent.getSource().getBindingContext().getProperty("ID")};
+			var oEventBus = sap.ui.getCore().getEventBus();
+			oEventBus.publish("Incidents", "ShowDetails", oData);
 		}
 	});
 });
