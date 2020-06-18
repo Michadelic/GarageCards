@@ -17,22 +17,6 @@
 				"settings": {
 					"odataVersion": "4.0"
 				}
-			},
-			"categorySource": {
-				"XXuri": "/destinations/Incidents_CF/incident/",
-				"uri": "http://localhost:8081/https://davidk-srv.cfapps.us10.hana.ondemand.com/incident/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "4.0"
-				}
-			},
-			"prioritySource": {
-				"XXuri": "/destinations/Incidents_CF/incident/Priority/",
-				"uri": "http://localhost:8081/https://davidk-srv.cfapps.us10.hana.ondemand.com/incident/Priority/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "4.0"
-				}
 			}
 		},
 		"sourceTemplate": {
@@ -88,18 +72,6 @@
 				"settings": {
 					"synchronizationMode": "None"
 				}
-			},
-			"categories": {
-				"dataSource": "categorySource",
-				"settings": {
-					"synchronizationMode": "None"
-				}
-			},
-			"priorities": {
-				"dataSource": "prioritySource",
-				"settings": {
-					"synchronizationMode": "None"
-				}
 			}
 		},
 		"resources": {
@@ -141,13 +113,6 @@
 	},
 	"sap.card": {
 		"type": "Component",
-		"configuration": {
-			"destinations": {
-				"myDestination": {
-					"name": "Northwind"
-				}
-			}
-		},
 		"header": {
 			"title": "Incident Creation",
 			"subTitle": "Add a new incident"
