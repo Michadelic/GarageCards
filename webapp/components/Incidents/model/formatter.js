@@ -4,7 +4,7 @@ sap.ui.define([], function () {
 	return {
 		src: function (value) {
 			if (value != undefined) {
-				return 'https://davidk-srv.cfapps.us10.hana.ondemand.com/incident/IncidentPhotos(${value})/image';
+				return 'https://davidk-srv.cfapps.us10.hana.ondemand.com/incident/IncidentPhotos(' + value + ')/image';
 			} else {
 				return "";
 			}
