@@ -9,10 +9,10 @@
 		<m:customHeader>
 			<m:Toolbar>
 				<c:Icon
-						size="2rem"
-						src="sap-icon://sap-ui5"
-						color="#FF5516"
-						class="sapUiLargeMarginBegin">
+					size="2rem"
+					src="sap-icon://sap-ui5"
+					color="#FF5516"
+					class="sapUiLargeMarginBegin">
 				</c:Icon>
 				<m:Title level="H2" titleStyle="H2" text="Garage Cards" class="sapUiTinyMarginBegin"/>
 			</m:Toolbar>
