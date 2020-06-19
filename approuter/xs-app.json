@@ -1,0 +1,15 @@
+{
+  "welcomeFile": "webapp/index.html",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/destinations/Incidents_CF/(.*)$",
+      "target": "$1",
+      "authenticationType": "none",
+      "destination": "Incidents_CF"
+    }
+  ]
+}

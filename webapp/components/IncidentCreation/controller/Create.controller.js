@@ -5,8 +5,7 @@ sap.ui.define([
 ], function (Controller, JSONModel, MessageToast) {
 	"use strict";
 
-	//const DESTINATION = "/destinations/Incidents_CF/incident/";
-	const DESTINATION = "http://localhost:8081/https://davidk-srv.cfapps.us10.hana.ondemand.com/incident/";
+	const DESTINATION = "/destinations/Incidents_CF/incident/";
 
 	var that = null;
 	var pictureObj = null;

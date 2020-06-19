@@ -10,7 +10,7 @@
     },
     "dataSources": {
       "incidents": {
-        "uri": "http://localhost:8081/https://davidk-srv.cfapps.us10.hana.ondemand.com/incident",
+        "uri": "/destinations/Incidents_CF/incident",
         "type": "OData"
       }
     },
