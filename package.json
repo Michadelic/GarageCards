@@ -5,9 +5,8 @@
   "private": true,
   "scripts": {
     "start": "ui5 serve",
+    "dist": "npm run build && ui5 serve --config ui5-dist.yaml",
     "lint": "eslint webapp",
-    "watch": "npm run karma",
-    "test": "npm run lint && rimraf coverage && npm run karma-ci",
     "build": "rimraf dist && ui5 build --a"
   },
   "dependencies": {

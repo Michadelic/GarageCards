@@ -28,19 +28,6 @@
 				<f:GridContainerSettings rowSize="70px" columnSize="70px" gap="8px" />
 			</f:layoutXS>
 
-
-			<!--<w:Card id="statistics" manifest="./components/Statistics/manifest.json" class="sapUiLargeMargin">
-				<w:layoutData>
-					<f:GridContainerItemLayoutData columns="2" />
-				</w:layoutData>
-			</w:Card>-->
-
-			<!--<w:Card id="analytics" manifest="./components/Analytics/manifest.json" class="sapUiLargeMargin">
-				<w:layoutData>
-					<f:GridContainerItemLayoutData columns="2" />
-				</w:layoutData>
-			</w:Card>-->
-
 			<w:Card id="queue" manifest="./components/Queue/manifest.json" class="sapUiLargeMargin">
 				<w:layoutData>
 					<f:GridContainerItemLayoutData columns="2" />

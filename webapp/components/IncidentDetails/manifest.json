@@ -8,6 +8,7 @@
 		"applicationVersion": {
 			"version": "1.0.0"
 		},
+		"i18n": "",
 		"shortTitle": "A short title for this Card",
 		"info": "Additional information about this Card",
 		"description": "A long description for this Card",

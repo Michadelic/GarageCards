@@ -1,6 +1,6 @@
 # Garage Cards
 
-Basic example with two sap.ui.integration cards and a web socket connection
+An example with several sap.ui.integration cards, a web socket connection to live reload the cards, and the UI5 event bus for communcation across cards.
 
 ## Prerequisites
 The **UI5 build and development tooling command line interface (UI5 CLI)** has to be installed.
@@ -13,9 +13,14 @@ For installation instructions please see [Installing the UI5 CLI](https://github
     npm install
     ```
 
-2. Start a local server and run the application (http://localhost:8080/index.html)
+2. For development, start a local server and run the application. Updates to files will cause the app to reload automatically (http://localhost:8080/index.html)
     ```sh
-    ui5 serve -o /index.html
+    npm start
+    ```
+   
+3. To run an optimized version that first builds a component preload and then serves from the dist folder run this command instead:
+   ```sh
+   npm run dist
     ```
 
 ## Testing
@@ -23,17 +28,10 @@ For installation instructions please see [Installing the UI5 CLI](https://github
     ```sh
     npm run lint
     ```
-* Start a local server and execute the tests automatically after every change
-    ```sh
-    npm run watch
-    ```
-* Run ESLint, start a local server and run the tests in CI mode
-    ```sh
-    npm test
-    ```
 
 For more build and development options please see: [UI5 Build and Development Tooling](https://github.com/SAP/ui5-tooling)
 
 ## Support
+
 This repository is based on the [OpenUI5 template demo apps](https://openui5.hana.ondemand.com/#/demoapps) and updated regularly with our latest recommendations. 
 If you found a bug, please create an [OpenUI5 issue](https://github.com/sap/openui5/issues). Thank you!
