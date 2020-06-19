@@ -2,6 +2,8 @@
 
 An example with several sap.ui.integration cards, a web socket connection to live reload the cards, and the UI5 event bus for communcation across cards.
 
+![Screenshot](Screenshot.png)
+
 ## Prerequisites
 The **UI5 build and development tooling command line interface (UI5 CLI)** has to be installed.
 For installation instructions please see [Installing the UI5 CLI](https://github.com/SAP/ui5-tooling#installing-the-ui5-cli).
