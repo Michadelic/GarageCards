@@ -1,0 +1,54 @@
+{
+	"_version": "1.14.0",
+	"sap.app": {
+		"id": "sap.ui.demo.basicTemplate.components.IncidentsPie",
+		"type": "card",
+		"title": "Service Incidents",
+		"subTitle": "Amount of incidents by category",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"incidents": {
+				"uri": "/destinations/Incidents_CF/incident/",
+				"type": "OData"
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://full-stacked-column-chart"
+		}
+	},
+	"sap.card": {
+		"type": "Analytical",
+		"header": {
+			"title": "Service Incidents by Category"
+		},
+		"content": {
+			"chartType": "Donut",
+			"data": {
+				"request": {
+					"url": "{{dataSources.incidents.uri}}/IncidentsByCategory"
+				},
+				"path": "/value"
+			},
+			"title": {
+				"text": "Donut Display",
+				"visible": true,
+				"alignment": "Center"
+			},
+			"measureAxis": "size",
+			"dimensionAxis": "color",
+			"dimensions": [{
+				"label": "Categories",
+				"value": "{category_code}"
+			}],
+			"measures": [{
+				"label": "Incidents",
+				"value": "{categories}"
+			}]
+		}
+	}
+}
