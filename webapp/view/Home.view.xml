@@ -28,7 +28,7 @@
 				<f:GridContainerSettings rowSize="70px" columnSize="70px" gap="8px" />
 			</f:layoutXS>
 
-			<w:Card id="queue" manifest="./components/Queue/manifest.json" class="sapUiLargeMargin">
+			<w:Card id="queue" manifest="./components/Queue/manifest.json" class="sapUiLargeMargin" manifestReady=".onQueueReady">
 				<w:layoutData>
 					<f:GridContainerItemLayoutData columns="2" />
 				</w:layoutData>

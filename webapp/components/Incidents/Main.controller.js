@@ -18,8 +18,6 @@ sap.ui.define([
 			oWS.attachMessage(function (oEvent) {
 				// update list
 				this.getView().getModel().refresh();
-				// update analytics card
-				$(".sapFCardAnalytical").control(0).refresh();
 			}.bind(this));
 		},
 

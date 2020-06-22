@@ -38,14 +38,14 @@
       "type": "Numeric",
       "data": {
         "request": {
-          "url": "{{dataSources.incidents.uri}}/SafetyIncidents?$orderby=createdAt%20desc"
+          "url": "{{dataSources.incidents.uri}}/SafetyIncidents/$count"
         },
-        "path": "/value"
+        "path": "/"
 
       },
       "title": "Service Incidents by Category",
       "mainIndicator": {
-        "number": "{= ${}.length }",
+        "number": "{}",
         "trend": "Up",
         "state": "Critical"
       },
