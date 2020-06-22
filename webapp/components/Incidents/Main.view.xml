@@ -15,6 +15,7 @@
             }"
             growing="true"
             growingThreshold="10"
+            updateFinished=".onUpdateFinished"
             class="incidentList">
             <headerToolbar>
                 <Toolbar>

@@ -39,6 +39,12 @@ sap.ui.define([
 			var oData = {id: oEvent.getSource().getBindingContext().getProperty("ID")};
 			var oEventBus = sap.ui.getCore().getEventBus();
 			oEventBus.publish("Incidents", "ShowDetails", oData);
+		},
+
+		onUpdateFinished: function (oEvent) {
+			var oData = {id: oEvent.getSource().getItems()[0].getBindingContext().getProperty("ID")};
+			var oEventBus = sap.ui.getCore().getEventBus();
+			oEventBus.publish("Incidents", "ShowDetails", oData);
 		}
 	});
 });
