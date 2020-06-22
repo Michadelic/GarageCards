@@ -17,7 +17,7 @@ sap.ui.define([
 		onQueueReady: function (oEvent) {
 			// do a one-time setup call for the web service
 			if (!this._bInit) {
-				var oWS = new WebSocket("ws://em-consumer-active-jaguar.cfapps.us10.hana.ondemand.com/");
+				var oWS = new WebSocket("wss://em-consumer-active-jaguar.cfapps.us10.hana.ondemand.com/");
 				oWS.attachMessage(function (oEvent) {
 					// update analytics card
 					this.refresh();

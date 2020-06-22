@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "path": "/destinations/Incidents_CF",
+      "target": {
+        "type": "destination",
+        "name": "Incidents_CF"
+      },
+      "description": "Incidents_CF"
+    }
+  ]
+}
