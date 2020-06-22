@@ -32,9 +32,14 @@ For installation instructions please see [Installing the UI5 CLI](https://github
     npm run lint
     ```
 
+## Deployment
+
+The app can be run locally with the UI5 tooling as described above or on SAP Cloud Platform.
+To deploy the app to SAP Cloud Platform, create an empty MTA project and add this project as an HTML module.
+
 For more build and development options please see: [UI5 Build and Development Tooling](https://github.com/SAP/ui5-tooling)
 
 ## Support
 
-This repository is based on the [OpenUI5 template demo apps](https://openui5.hana.ondemand.com/#/demoapps) and updated regularly with our latest recommendations. 
-If you found a bug, please create an [OpenUI5 issue](https://github.com/sap/openui5/issues). Thank you!
+This repository is based on the [OpenUI5 template demo apps](https://openui5.hana.ondemand.com/#/demoapps) and enriched with custom features. 
+The codebase is published for demostration purposes. If you found a bug, and you would like to fix it, please create a Pull Request. Thank you!
