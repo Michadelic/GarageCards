@@ -4,6 +4,11 @@ An example with several sap.ui.integration cards, a web socket connection to liv
 
 ![Screenshot](Screenshot.png)
 
+### Abstract
+
+In the month of June, we welcome back Michael Graf, an expert resource who is no stranger to UI5. In this session, we will be using WebSockets and UI5 to enable a real-time dashboard for our safety incidents, which enables safety managers to see – in real time – what types of incidents are being created.
+
+[Part of the Series: SAP Cloud Platform in the Garage](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&partnerref=SD&eventid=2166620&sessionid=1&key=36E1F9989CAEE5DDCCFACEAD1FCA6329&regTag=761078&sourcepage=register)
 
 ## Prerequisites
 The **UI5 build and development tooling command line interface (UI5 CLI)** has to be installed.
